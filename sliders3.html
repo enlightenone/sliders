@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vow To Be Chic Slider</title>
+<style>
+/*  slider {
+    display: block;
+  }*/
+  ul {
+     list-style: none;
+     display: block;
+     margin: 0px;
+     padding: 0px;
+    }
+
+  li {
+     display: none;
+  }
+  .stop_bottom {
+    margin: 10px; 
+    border-radius: 50px; 
+    padding: 10px 30px; 
+    background: blue; 
+    color: white;
+    cursor: pointer
+  }
+
+  img {
+    width: 100%;
+  }
+
+
+</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./style/style.css">
+<script type="text/javascript" src="js/sliders.js"></script>
+</head>
+<body>
+<slider style="display: block ;border: 1px solid black; width: 100%; text-align: center; position: relative;">
+  
+<!--   Images Sliders Block-->
+   <div style="border: 2px solid red;">
+      <ul id="images_slides">
+        <li id="image_1"><img src="./images/koara.jpg"></li>
+        <li id="image_2"><img src="./images/elephant.jpg"></li>
+        <li id="image_3"><img src="./images/panda.jpg"></li>
+        <li id="image_4"><img src="./images/tiger.jpg"></li>
+        <li id="image_5"><img src="./images/whale.jpg"></li>
+        <li id="image_6"><img src="./images/dolphine.jpg"></li>
+      </ul>
+   </div>
+
+  <!-- End of Images Sliders Block-->
+  <!--  Sliders Controller Block -->
+      <span class="stop_bottom"  style="position: absolute; top:50%; left: 50px;"onclick="Slides.prevImage()"><i class="fa fa-chevron-left"></i></span>
+      <div style="position: absolute; bottom: 20px ;with: 100%;">
+      <span class="stop_bottom" onclick="startSliders()"><i class="fa fa-play"></i></span>
+      <span class="stop_bottom" onclick="stopSliders()"><i class="fa fa-stop"></i></span>
+      </div>
+      <span class="stop_bottom"  style="position: absolute; top:50%; right: 50px;"onclick="Slides.nextImage()"><i class="fa fa-chevron-right"></i></span>
+  <!--  Sliders Controller Block -->
+</slider>
+
+</body>
+</html>
