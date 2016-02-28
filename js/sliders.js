@@ -4,6 +4,7 @@ window.onload = function(){
   var image_id  =  "image_" + "1";
   var imageNode  = document.getElementById(image_id);
   imageNode.style.display = "block";
+
 }
 
 var image_length = 6 ;
@@ -12,7 +13,7 @@ var highlighted_image = "image_" + flag;
 var image_id;
 var image_node;
 
-var myVar = setInterval(function(){ changesSliders() }, 1000);
+var myVar = setInterval(function(){ changesSliders() }, 3000);
 
 function changesSliders() {
      if (flag <= 6 ){
@@ -22,7 +23,6 @@ function changesSliders() {
         highlighted_image = "image_1";
         flag = 1;
      }
-
     for (i=1 ; i <= 6 ; i++) {
        var image_id = "image_" + i;
        if(image_id == highlighted_image ){
@@ -39,6 +39,31 @@ function stopSliders(){
 }
 
 function startSliders(){
-  myVar = setInterval(function(){ changesSliders() }, 1000);
+  myVar = setInterval(function(){ changesSliders() }, 3000);
 }
+
+function nextSlide(){
+  var images_block = document.getElementById("images_slides");
+  var sliders  = images_block.children;
+  var display_attribute, current_image, next_image;
+
+  for(i=0; i < 6; i++){
+      display_attribute = sliders[i].style.display;
+      current_image_id = sliders[i].id.split("image_")[1]; 
+      next_image_id = parseInt(current_image_id) + 1;
+      next_image = "image_" +  next_image_id ;
+
+      console.log("image_" + current_image_id);
+      console.log(next_image);
+
+    // if (display_attribute == "block"){
+
+        
+    // } // End of dsiplay_attribute conditional statment
+  }
+ }
+
+function prevSlide(){
+  alert("Hello");
+} 
 
