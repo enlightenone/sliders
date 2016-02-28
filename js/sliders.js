@@ -45,25 +45,30 @@ function startSliders(){
 function nextSlide(){
   var images_block = document.getElementById("images_slides");
   var sliders  = images_block.children;
-  var display_attribute, current_image, next_image;
+  var display_attribute, current_image, next_image, next_image_id;
 
   for(i=0; i < 6; i++){
       display_attribute = sliders[i].style.display;
       current_image_id = sliders[i].id.split("image_")[1]; 
-      next_image_id = parseInt(current_image_id) + 1;
+      
       next_image = "image_" +  next_image_id ;
 
-      console.log("image_" + current_image_id);
-      console.log(next_image);
 
-    // if (display_attribute == "block"){
+    if (display_attribute == "block"){
+      next_image_id = i + 1;
+    } 
 
-        
-    // } // End of dsiplay_attribute conditional statment
+    if(i === next_image_id){
+        sliders[i].style.display = "block";
+    } else {
+       sliders[i].style.display = "none";
+    }
+
+    // End of dsiplay_attribute conditional statment
   }
  }
 
 function prevSlide(){
-  alert("Hello");
+
 } 
 
