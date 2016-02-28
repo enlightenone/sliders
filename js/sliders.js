@@ -2,7 +2,7 @@ window.onload = function(){
   var image_id  =  "image_" + "1";
   var imageNode  = document.getElementById(image_id);
   imageNode.style.display = "block";
-  startSliders();
+
 }
 
 var image_length = 6 ;
@@ -10,6 +10,8 @@ var flag = 1;
 var highlighted_image = "image_" + flag;
 var image_id;
 var image_node;
+
+ myVar = setInterval(function(){ changesSliders() }, 3000);
 
 
 function changesSliders() {
@@ -65,6 +67,29 @@ function nextSlide(){
 
 
 function prevSlide(){
+  var images_block = document.getElementById("images_slides");
+  var sliders  = images_block.children;
+  var display_attribute, next_image_id;
 
-} 
+  for(i=5; i >= 0; i--){
+      display_attribute = sliders[i].style.display;
+ 
+   if (display_attribute == "block"){
+      if (i == 0){
+        sliders[5].style.display = "block";
+      } else {
+        next_image_id = i - 1;
+      }
+    } // end of if conditional statement
+
+   if(i === next_image_id){
+      sliders[i].style.display = "block";
+    } else {
+       sliders[i].style.display = "none";
+    }
+  } // ENd of for loop block
+
+
+
+} // End of prevSlide() function
 
