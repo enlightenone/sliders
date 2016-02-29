@@ -5,7 +5,6 @@ window.onload = function(){
   Slides.sliders = document.getElementById("images_slides").children;
 }
 
-
 /*********** Image interval display function ********************/
 var image_length = 6 ;
 var flag = 1;
@@ -31,16 +30,15 @@ function changesSliders() {
        }
     } // End of for loop functon
 } // End of changesSlider() function
-
 /*********** Image interval display function ********************/
 
 /************* Sliders Control functions ***********************/
-
 function stopSliders(){
   clearInterval(initInterval);
 } // End of stopSliders() function
 
 function startSliders(){
+  clearInterval(initInterval);
   initInterval = setInterval(function(){ changesSliders() }, 3000);
 } // End of startSliders() function
 
@@ -85,5 +83,4 @@ var Slides = {
                             } // End of for loop block
                          } // End of prevImage() function
               } // End of Slides object
-
 /************* End of Sliders Control functions ***********************/
